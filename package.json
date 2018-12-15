@@ -18,18 +18,14 @@
   "main": "dist/formik-persist.js",
   "module": "dist/formik-persist.es6.js",
   "typings": "dist/formik-persist.d.ts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "test": "jest --env=jsdom",
     "test:watch": "npm run test -- --watch",
     "start": "cross-env NODE_ENV=development tsc-watch --onSuccess \"rollup -c\"",
     "prebuild": "rimraf dist",
     "build": "tsc && cross-env NODE_ENV=production rollup -c && rimraf compiled",
-    "prepublish": "npm run build",
     "format": "prettier --trailing-comma es5 --single-quote --write 'src/**/*' 'test/**/*'",
-    "precommit": "lint-staged",
     "addc": "all-contributors add",
     "gen-docs": "all-contributors generate && doctoc README.md"
   },
@@ -88,9 +84,7 @@
     "semi": true
   },
   "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{ts,tsx}"
-    ],
+    "collectCoverageFrom": ["src/**/*.{ts,tsx}"],
     "transform": {
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
@@ -98,14 +92,7 @@
       "<rootDir>/test/**/*.ts?(x)",
       "<rootDir>/test/**/?(*.)(spec|test).ts?(x)"
     ],
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
-    ],
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "json"
-    ]
+    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
+    "moduleFileExtensions": ["ts", "tsx", "js", "json"]
   }
 }
